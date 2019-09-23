@@ -1,0 +1,5 @@
+Q, H, S, D = tuple(map(int, input().split()))
+N = int(input())
+min2l = min(8 * Q, 4 * H, 2 * S, D)
+min1l = min(4 * Q, 2 * H, S)
+print((N // 2) * min2l + (N % 2) * min1l)
