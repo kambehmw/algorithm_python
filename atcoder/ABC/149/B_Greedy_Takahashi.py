@@ -1,0 +1,5 @@
+A, B, K = tuple(map(int, input().split()))
+new_A = max(0, A - K)
+K = max(0, K - A)
+new_B = max(0, B - K)
+print(new_A, new_B)
