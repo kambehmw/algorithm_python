@@ -6,16 +6,14 @@ for _ in range(N-1):
     S.append(s)
     F.append(f)
 
-for i in range(N-1):
+for i in range(N):
     total_time = 0
-    for j, (c, s, f) in enumerate(zip(C[i:], S[i:], F[i:])):
-        if j == 0:
-            total_time += (c + s)
+    for j in range(i, N-1):
+        if total_time < S[j]:
+            total_time = S[j]
+        elif total_time % F[j] == 0:
+            pass
         else:
-            if total_time < s:
-                total_time = s
-            if total_time % f != 0:
-                total_time += f - total_time % f
-            total_time += c
+            total_time = total_time + (F[j] - total_time % F[j])
+        total_time += C[j]
     print(total_time)
-print(0)
