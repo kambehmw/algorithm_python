@@ -1,0 +1,8 @@
+NA, NB = map(int, input().split())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+set_A = set(A)
+set_B = set(B)
+union = set_A.union(set_B)
+intersection = set_A.intersection(set_B)
+print(len(intersection) / len(union))
